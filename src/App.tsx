@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import pfp from "C:/Users/abhik/tasks/src/assets/pfp.jpg";
+import pfp from "./assets/pfp.jpg";
 
 function App(): JSX.Element {
     return (
