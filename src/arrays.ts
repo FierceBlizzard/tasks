@@ -46,7 +46,10 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    const strippedArray = amounts.map((element: string): string =>
+        element.replace("$", "")
+    );
+    return stringsToIntegers(strippedArray);
 };
 
 /**
