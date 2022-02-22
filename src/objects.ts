@@ -41,7 +41,9 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    return question.type === "short_answer_question"
+        ? true
+        : question.options.indexOf(answer) >= 0;
 }
 
 /**
