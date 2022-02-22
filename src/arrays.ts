@@ -75,8 +75,6 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  */
 export function countShortWords(words: string[]): number {
     const wordlist = words.filter((word: string): boolean => word.length < 4);
-    console.log(words);
-    console.log(wordlist);
     return wordlist.length;
 }
 
@@ -101,7 +99,14 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length === 0) {
+        return "0=0";
+    }
+    const sum = addends.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    return "" + sum + "=" + addends.join("+");
 }
 
 /**
@@ -114,5 +119,23 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    if (values.some((val: number): boolean => val < 0) === false) {
+        const sum: number = values.reduce(
+            (total: number, num: number) => total + num,
+            0
+        );
+        const postlist1 = [...values, sum];
+        return postlist1;
+    }
+    const i = values.findIndex((num: number): boolean => num < 0);
+    const postlist2 = values.filter(
+        (val: number): boolean => values.indexOf(val) < i
+    );
+    const sum = postlist2.reduce(
+        (total: number, num: number) => total + num,
+        0
+    );
+    const postlist3 = [...values];
+    postlist3.splice(i + 1, 0, sum);
+    return postlist3;
 }
