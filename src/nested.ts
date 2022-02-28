@@ -107,7 +107,10 @@ export function toCSV(questions: Question[]): string {
                 "\n"),
         ""
     );
-    return "id,name,options,points,published\n" + stringArray.toString();
+    return (
+        "id,name,options,points,published\n" +
+        stringArray.toString().substring(0, stringArray.length - 1)
+    );
 }
 
 /**
