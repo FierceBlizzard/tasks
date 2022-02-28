@@ -92,7 +92,7 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    const stringArray = questions.map(
+    /*    const stringArray = questions.map(
         (element: Question): string =>
             element.id.toString() +
             "," +
@@ -103,6 +103,21 @@ export function toCSV(questions: Question[]): string {
             element.points.toString() +
             "," +
             element.published.toString()
+    );*/
+    const stringArray = questions.reduce(
+        (csvString: string, element: Question) =>
+            (csvString +=
+                element.id.toString() +
+                "," +
+                element.name +
+                "," +
+                element.options.length.toString() +
+                "," +
+                element.points.toString() +
+                "," +
+                element.published.toString() +
+                "\n"),
+        ""
     );
     return "id,name,options,points,published\n" + stringArray.toString();
 }
