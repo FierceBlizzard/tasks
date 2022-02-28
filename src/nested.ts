@@ -198,7 +198,21 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    if (newQuestionType !== "short_answer_question") {
+        return questions.map(
+            (element: Question): Question =>
+                element.id !== targetId
+                    ? element
+                    : { ...element, type: newQuestionType }
+        );
+    } else {
+        return questions.map(
+            (element: Question): Question =>
+                element.id !== targetId
+                    ? element
+                    : { ...element, type: newQuestionType, options: [] }
+        );
+    }
 }
 
 /**
