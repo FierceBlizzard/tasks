@@ -92,7 +92,19 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    return "";
+    const stringArray = questions.map(
+        (element: Question): string =>
+            element.id.toString() +
+            "," +
+            element.name +
+            "," +
+            element.options.length.toString() +
+            "," +
+            element.points.toString() +
+            "," +
+            element.published.toString()
+    );
+    return "id,name,options,points,published\n" + stringArray.toString();
 }
 
 /**
@@ -117,6 +129,15 @@ export function publishAll(questions: Question[]): Question[] {
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
 export function sameType(questions: Question[]): boolean {
+    const typeArray = questions.map((element: Question): boolean =>
+        element.type === "multiple_choice_question" ? true : false
+    );
+    const filteredLength = typeArray.filter(
+        (element: boolean) => element === true
+    ).length;
+    if (filteredLength === 0 || filteredLength === typeArray.length) {
+        return true;
+    }
     return false;
 }
 
