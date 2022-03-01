@@ -237,7 +237,7 @@ export function helpEdit(
         optionsArray.splice(targetOptionIndex, 1, newOption);
         return optionsArray;
     } else {
-        return ["question not found!"];
+        return [];
     }
 }
 export function editOption(
@@ -260,13 +260,16 @@ export function editOption(
             targetOptionIndex,
             newOption
         );
-
-        return questions.map(
-            (element: Question): Question =>
-                element.id !== targetId
-                    ? element
-                    : { ...element, options: optionsArray }
-        );
+        if (optionsArray !== null) {
+            return questions.map(
+                (element: Question): Question =>
+                    element.id !== targetId
+                        ? element
+                        : { ...element, options: optionsArray }
+            );
+        } else {
+            return [...questions];
+        }
     }
 }
 
