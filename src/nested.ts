@@ -288,10 +288,12 @@ export function duplicateQuestionInArray(
         (element: Question): boolean => element.id === targetId
     );
     const questionsClone = [...questions];
-    questionsClone.splice(
-        questionIndex + 1,
-        0,
-        duplicateQuestion(newId, oldQuestion)
-    );
+    if (oldQuestion !== undefined) {
+        questionsClone.splice(
+            questionIndex + 1,
+            0,
+            duplicateQuestion(newId, oldQuestion)
+        );
+    }
     return questionsClone;
 }
