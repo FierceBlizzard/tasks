@@ -44,7 +44,10 @@ export function findQuestion(
  * with the given `id`.
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    const newQuest = questions.filter(
+        (quest: Question): boolean => id !== quest.id
+    );
+    return newQuest;
 }
 
 /***
@@ -52,7 +55,8 @@ export function removeQuestion(questions: Question[], id: number): Question[] {
  * questions, as an array.
  */
 export function getNames(questions: Question[]): string[] {
-    return [];
+    const names = questions.map((quest: Question): string => quest.name);
+    return names;
 }
 
 /***
