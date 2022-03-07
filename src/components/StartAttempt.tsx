@@ -23,9 +23,11 @@ export function StartAttempt(): JSX.Element {
                 {" "}
                 Start Quiz{" "}
             </Button>
+            <span> </span>
             <Button onClick={() => stopAttempt()} disabled={!inProgress}>
                 Stop Quiz
             </Button>
+            <span> </span>
             <Button onClick={() => mulligan()} disabled={inProgress}>
                 Mulligan
             </Button>
