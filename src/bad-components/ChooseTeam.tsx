@@ -10,13 +10,8 @@ const PEOPLE = [
     "Margaret Hamilton"
 ];
 
-interface teamStuff {
-    setTeam: (teammate: string[]) => void;
-    team: string;
-}
-
 export function ChooseTeam(): JSX.Element {
-    const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
+    const [allOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(newMember: string) {
