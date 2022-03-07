@@ -31,8 +31,8 @@ export function TwoDice(): JSX.Element {
                 Two Dice:
                 <span data-testid="left-die"> {die1},</span>
                 <span data-testid="right-die"> {die2} </span>
-                {die1 !== die2 && <span>Keep rolling!</span>}
             </div>
+            {die1 !== die2 && <span>Keep rolling!</span>}
         </div>
     );
 }
