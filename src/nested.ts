@@ -1,5 +1,6 @@
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
+import { makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -111,7 +112,7 @@ export function toCSV(questions: Question[]): string {
             "," +
             quest.points.toString() +
             "," +
-            quest.published.toString() +
+            quest.published.toString()
     );
     console.log(header + questCSV.join(""));
     return header + questCSV.join("");
@@ -153,7 +154,11 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    return [];
+    const question = questions.map(
+        (quest: Question): Question => ({ ...quest })
+    );
+    const question2 = [...question, makeBlankQuestion(id, name, type)];
+    return question2;
 }
 
 /***
@@ -166,7 +171,14 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    const question = questions.map(
+        (quest: Question): Question => ({ ...quest })
+    );
+    const i = question.findIndex(
+        (quest: Question): boolean => quest.id === targetId
+    );
+    question[i].name = newName;
+    return question;
 }
 
 /***
@@ -181,7 +193,22 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    const question = questions.map(
+        (quest: Question): Question => ({ ...quest })
+    );
+    const i = question.findIndex(
+        (quest: Question): boolean => quest.id === targetId
+    );
+    if (
+        question[i].type === "multiple_choice_question" &&
+        newQuestionType === "short_answer_question"
+    ) {
+        question[i].type = newQuestionType;
+        question[i].options = [];
+    } else {
+        question[i].type = newQuestionType;
+    }
+    return question;
 }
 
 /**
