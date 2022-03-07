@@ -21,7 +21,9 @@ export function TwoDice(): JSX.Element {
     return (
         <div>
             <Button onClick={() => roll1(d6())}>Roll Left</Button>
+            <span> </span>
             <Button onClick={() => rollBoth()}>Roll Both</Button>
+            <span> </span>
             <Button onClick={() => roll2(d6())}>Roll Right</Button>
             {die1 === 1 && die2 === 1 && (
                 <span>You lose. (So you rolled both, huh?)</span>
