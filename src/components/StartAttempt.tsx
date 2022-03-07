@@ -16,7 +16,6 @@ export function StartAttempt(): JSX.Element {
     }
     return (
         <div>
-            <span>NumAttempts: {numAttempts} </span>
             <Button
                 onClick={() => startAttempt()}
                 disabled={!numAttempts || inProgress}
@@ -30,6 +29,9 @@ export function StartAttempt(): JSX.Element {
             <Button onClick={() => mulligan()} disabled={inProgress}>
                 Mulligan
             </Button>
+            <div>
+                <span>NumAttempts: {numAttempts} </span>
+            </div>
         </div>
     );
 }
