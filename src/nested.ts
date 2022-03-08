@@ -252,21 +252,37 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    const quest = { ...questions };
+    let quest;
     if (targetOptionIndex === -1) {
-        targetOptionIndex = quest[targetId].options.length - 1;
+        quest = questions.map(
+            (qt: Question): Question =>
+                qt.id === targetId
+                    ? { ...qt, options: [...qt.options, newOption] }
+                    : { ...qt }
+        );
+    } else {
+        quest = questions.map(
+            (qt: Question): Question =>
+                pleaseHelp(qt, targetId, targetOptionIndex, newOption)
+        );
     }
-    quest[targetOptionIndex].options[targetOptionIndex] = newOption;
-    const i = quest.findIndex(
-        (quest: Question): boolean => quest.id === targetId
-    );
-    if (targetOptionIndex === -1) {
-        targetOptionIndex = quest[i].options.length - 1;
-        quest[i].options.splice(targetOptionIndex, 0, newOption);
-        return quest;
-    }
-    quest[i].options.splice(targetOptionIndex, 1, newOption);
     return quest;
+}
+
+export function pleaseHelp(
+    quest: Question,
+    targetId: number,
+    targetOptionIndex: number,
+    newOption: string
+): Question {
+    let tmp;
+    if (quest.id === targetId) {
+        tmp = { ...quest, options: [...quest.options] };
+        tmp.options.splice(targetOptionIndex, 1, newOption);
+    } else {
+        tmp = { ...quest };
+    }
+    return tmp;
 }
 
 /***
@@ -285,13 +301,10 @@ export function duplicateQuestionInArray(
             ...quest
         })
     );
-    console.log(question);
     const i = question.findIndex(
         (quest: Question): boolean => quest.id === targetId
     );
-    if (i !== -1) {
-        question.splice(i + 1, 0, duplicateQuestion(newId, question[i]));
-    }
+    question.splice(i + 1, 0, duplicateQuestion(newId, question[i]));
     console.log(question);
     return question;
 }
