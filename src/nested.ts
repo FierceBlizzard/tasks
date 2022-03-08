@@ -252,27 +252,23 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    let sv = 1;
-    if (targetOptionIndex === -1) {
-        sv = 0;
-        targetOptionIndex = questions[targetId].options.length - 1;
-    }
-    const quest = questions.map(
-        (quest: Question): Question => ({
-            ...quest,
-            options:
-                quest.id === targetId
-                    ? quest.options.splice(targetOptionIndex, sv, newOption)
-                    : quest.options
-        })
+    const quest = questions.map((quest: Question): Question => ({ ...quest }));
+    const i = quest.findIndex(
+        (quest: Question): boolean => quest.id === targetId
     );
+    if (targetOptionIndex === -1) {
+        targetOptionIndex = quest[i].options.length - 1;
+        quest[i].options.splice(targetOptionIndex, 0, newOption);
+        return quest;
+    }
+    quest[i].options.splice(targetOptionIndex, 1, newOption);
     return quest;
 }
 
 /***
  * Consumes an array of questions, and produces a new array based on the original array.
  * The only difference is that the question with id `targetId` should now be duplicated, with
- * the dupliqcate inserted directly after the original question. Use the `duplicateQuestion`
+ * the duplicate inserted directly after the original question. Use the `duplicateQuestion`
  * function you defined previously; the `newId` is the parameter to use for the duplicate's ID.
  */
 export function duplicateQuestionInArray(
@@ -285,9 +281,13 @@ export function duplicateQuestionInArray(
             ...quest
         })
     );
+    console.log(question);
     const i = question.findIndex(
         (quest: Question): boolean => quest.id === targetId
     );
-    question.splice(i + 1, 0, duplicateQuestion(newId, question[i]));
+    if (i !== -1) {
+        question.splice(i + 1, 0, duplicateQuestion(newId, question[i]));
+    }
+    console.log(question);
     return question;
 }
