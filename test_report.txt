@@ -2,7 +2,296 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
+PASS src/nested.test.ts
+  ● Console
+
+    console.log
+      [
+        {
+          id: 1,
+          name: 'Question 1',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 27,
+          name: 'Copy of Question 1',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 47,
+          name: 'My New Question',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 2,
+          name: 'Question 2',
+          body: '',
+          type: 'short_answer_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        }
+      ]
+
+      at duplicateQuestionInArray (src/nested.ts:308:13)
+
+    console.log
+      [
+        {
+          id: 1,
+          name: 'Question 1',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 47,
+          name: 'My New Question',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 19,
+          name: 'Copy of My New Question',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 2,
+          name: 'Question 2',
+          body: '',
+          type: 'short_answer_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        }
+      ]
+
+      at duplicateQuestionInArray (src/nested.ts:308:13)
+
+    console.log
+      [
+        {
+          id: 1,
+          name: 'Mascot',
+          body: 'What is the name of the UD Mascot?',
+          type: 'multiple_choice_question',
+          options: [ 'Bluey', 'YoUDee', 'Charles the Wonder Dog' ],
+          expected: 'YoUDee',
+          points: 7,
+          published: false
+        },
+        {
+          id: 2,
+          name: 'Motto',
+          body: "What is the University of Delaware's motto?",
+          type: 'multiple_choice_question',
+          options: [
+            'Knowledge is the light of the mind',
+            'Just U Do it',
+            "Nothing, what's the motto with you?"
+          ],
+          expected: 'Knowledge is the light of the mind',
+          points: 3,
+          published: false
+        },
+        {
+          id: 3,
+          name: 'Goats',
+          body: 'How many goats are there usually on the Green?',
+          type: 'multiple_choice_question',
+          options: [ 'Zero, why would there be goats on the green?', '18420', 'Two' ],
+          expected: 'Two',
+          points: 10,
+          published: false
+        },
+        {
+          id: 111,
+          name: 'Copy of Goats',
+          body: 'How many goats are there usually on the Green?',
+          type: 'multiple_choice_question',
+          options: [ 'Zero, why would there be goats on the green?', '18420', 'Two' ],
+          expected: 'Two',
+          points: 10,
+          published: false
+        }
+      ]
+
+      at duplicateQuestionInArray (src/nested.ts:308:13)
+
 PASS src/arrays.test.ts
+  ● Console
+
+    console.log
+      [
+        {
+          id: 1,
+          name: 'Question 1',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 27,
+          name: 'Copy of Question 1',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 47,
+          name: 'My New Question',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 2,
+          name: 'Question 2',
+          body: '',
+          type: 'short_answer_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        }
+      ]
+
+      at duplicateQuestionInArray (src/nested.ts:308:13)
+
+    console.log
+      [
+        {
+          id: 1,
+          name: 'Question 1',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 47,
+          name: 'My New Question',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 19,
+          name: 'Copy of My New Question',
+          body: '',
+          type: 'multiple_choice_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        },
+        {
+          id: 2,
+          name: 'Question 2',
+          body: '',
+          type: 'short_answer_question',
+          options: [],
+          expected: '',
+          points: 1,
+          published: false
+        }
+      ]
+
+      at duplicateQuestionInArray (src/nested.ts:308:13)
+
+    console.log
+      [
+        {
+          id: 1,
+          name: 'Mascot',
+          body: 'What is the name of the UD Mascot?',
+          type: 'multiple_choice_question',
+          options: [ 'Bluey', 'YoUDee', 'Charles the Wonder Dog' ],
+          expected: 'YoUDee',
+          points: 7,
+          published: false
+        },
+        {
+          id: 2,
+          name: 'Motto',
+          body: "What is the University of Delaware's motto?",
+          type: 'multiple_choice_question',
+          options: [
+            'Knowledge is the light of the mind',
+            'Just U Do it',
+            "Nothing, what's the motto with you?"
+          ],
+          expected: 'Knowledge is the light of the mind',
+          points: 3,
+          published: false
+        },
+        {
+          id: 3,
+          name: 'Goats',
+          body: 'How many goats are there usually on the Green?',
+          type: 'multiple_choice_question',
+          options: [ 'Zero, why would there be goats on the green?', '18420', 'Two' ],
+          expected: 'Two',
+          points: 10,
+          published: false
+        },
+        {
+          id: 111,
+          name: 'Copy of Goats',
+          body: 'How many goats are there usually on the Green?',
+          type: 'multiple_choice_question',
+          options: [ 'Zero, why would there be goats on the green?', '18420', 'Two' ],
+          expected: 'Two',
+          points: 10,
+          published: false
+        }
+      ]
+
+      at duplicateQuestionInArray (src/nested.ts:308:13)
+
 PASS src/objects.test.ts
 PASS src/HtmlCss.test.tsx
 PASS src/functions.test.ts
@@ -11,18 +300,20 @@ PASS src/App.test.tsx
 ----------------|---------|----------|---------|---------|-------------------
 File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------|---------|----------|---------|---------|-------------------
-All files       |      99 |    97.43 |     100 |   98.94 |                   
- src            |      99 |    97.43 |     100 |   98.94 |                   
+All files       |   69.36 |    70.96 |   71.79 |   70.48 |                   
+ src            |   69.36 |    70.96 |   71.79 |   70.48 |                   
   App.tsx       |     100 |      100 |     100 |     100 |                   
-  arrays.ts     |     100 |      100 |     100 |     100 |                   
+  arrays.ts     |       0 |        0 |       0 |       0 | 8-140             
   functions.ts  |     100 |      100 |     100 |     100 |                   
+  nested.ts     |     100 |      100 |     100 |     100 |                   
   objects.ts    |   96.66 |     87.5 |     100 |   96.55 | 50                
  src/interfaces |       0 |        0 |       0 |       0 |                   
+  answer.ts     |       0 |        0 |       0 |       0 |                   
   question.ts   |       0 |        0 |       0 |       0 |                   
 ----------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 6 passed, 6 total
-Tests:       33 passed, 33 total
+Test Suites: 7 passed, 7 total
+Tests:       56 passed, 56 total
 Snapshots:   0 total
-Time:        4.248 s
+Time:        4.629 s
 Ran all test suites.
