@@ -172,12 +172,11 @@ export function renameQuestionById(
     newName: string
 ): Question[] {
     const question = questions.map(
-        (quest: Question): Question => ({ ...quest })
+        (quest: Question): Question => ({
+            ...quest,
+            name: quest.id === targetId ? newName : quest.name
+        })
     );
-    const i = question.findIndex(
-        (quest: Question): boolean => quest.id === targetId
-    );
-    question[i].name = newName;
     return question;
 }
 
@@ -227,7 +226,12 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ) {
-    return [];
+    const quest = { ...questions };
+    if (targetOptionIndex === -1) {
+        targetOptionIndex = quest[targetId].options.length - 1;
+    }
+    quest[targetOptionIndex].options[targetOptionIndex] = newOption;
+    return quest;
 }
 
 /***
