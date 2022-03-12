@@ -1,3 +1,4 @@
+import { render } from "@testing-library/react";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
@@ -12,5 +13,25 @@ export function d6(): number {
 }
 
 export function TwoDice(): JSX.Element {
-    return <div>Two Dice</div>;
+    const [die1, setDie1] = useState<number>(1);
+    const [die2, setDie2] = useState<number>(2);
+
+    function rollDie1(): void {
+        setDie1(d6());
+    }
+    function rollDie2(): void {
+        setDie2(d6());
+    }
+    return (
+        <div>
+            <Button onClick={rollDie1}>Roll Left</Button>
+            <Button onClick={rollDie2}>Roll Right</Button>
+            <div>
+                <span data-testid="left-die">Left Die: {die1}</span>
+                <span data-testid="right-die">Right Die: {die2}</span>
+            </div>
+            {die1 === die2 && die1 !== 1 && die2 !== 1 && <span>Win</span>}
+            {die1 === 1 && die2 === 1 && <span>Lose</span>}
+        </div>
+    );
 }
