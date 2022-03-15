@@ -17,14 +17,14 @@ function ChangeColor({ setColorIndex, colorIndex }: colorProp): JSX.Element {
     );
 }
 
-function ColorPreview(): JSX.Element {
+function ColorPreview({ colorIndex }: colorProp): JSX.Element {
     return (
         <div
             data-testid="colored-box"
             style={{
                 width: "50px",
                 height: "50px",
-                backgroundColor: COLORS[DEFAULT_COLOR_INDEX],
+                backgroundColor: COLORS[colorIndex],
                 display: "inline-block",
                 verticalAlign: "bottom",
                 marginLeft: "5px"
@@ -38,13 +38,16 @@ export function ColoredBox(): JSX.Element {
     return (
         <div>
             <h3>Colored Box</h3>
-            <span>The current color is: {COLORS[DEFAULT_COLOR_INDEX]}</span>
+            <span>The current color is: {COLORS[colorIndex]}</span>
             <div>
                 <ChangeColor
                     setColorIndex={setColorIndex}
                     colorIndex={colorIndex}
                 ></ChangeColor>
-                <ColorPreview></ColorPreview>
+                <ColorPreview
+                    setColorIndex={setColorIndex}
+                    colorIndex={colorIndex}
+                ></ColorPreview>
             </div>
         </div>
     );
