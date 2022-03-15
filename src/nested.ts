@@ -305,6 +305,5 @@ export function duplicateQuestionInArray(
         (quest: Question): boolean => quest.id === targetId
     );
     question.splice(i + 1, 0, duplicateQuestion(newId, question[i]));
-    console.log(question);
     return question;
 }

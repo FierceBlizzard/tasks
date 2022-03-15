@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { dhValue, setDhValue } from "./DoubleHalfState";
 
 export function DoubleHalf(): JSX.Element {
-    const [dhValue, setDhValue] = useState<number>(1);
+    const [dhValue, setDhValue] = useState<number>(10);
     function Doubler(): void {
         setDhValue(2 * dhValue);
     }

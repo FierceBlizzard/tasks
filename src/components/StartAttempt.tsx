@@ -6,13 +6,9 @@ export function StartAttempt(): JSX.Element {
     const [testing, setTest] = useState<boolean>(false);
 
     function changeAttempts(numChange: number): void {
-        console.log("Attempt Num: ");
-        console.log(numAttempts + numChange + "\n");
         setNumAttempts(numAttempts + numChange);
     }
     function changeTest(): void {
-        console.log("testing: ");
-        console.log(!testing + "\n");
         setTest(!testing);
     }
     return (
