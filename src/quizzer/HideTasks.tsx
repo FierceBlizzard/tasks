@@ -21,7 +21,7 @@ export function HideTasks(): JSX.Element {
     const [hidden, setHidden] = useState<boolean>(true);
     return (
         <div>
-            {hidden && (
+            {!hidden && (
                 <div>
                     <div className="App">
                         <header className="App-header">
