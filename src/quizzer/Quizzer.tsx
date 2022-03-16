@@ -7,6 +7,7 @@ export function Quizzer(): JSX.Element {
             <img
                 src="https://i.imgur.com/Mv9xXLo.jpeg"
                 alt="A sketch of the Quizzer application"
+                width="750px"
             ></img>
         </div>
     );
