@@ -24,11 +24,7 @@ function App(): JSX.Element {
                 Hello World! - Welcome to UD CISC275 with React Hooks and
                 TypeScript (ft Craig)
             </header>
-<<<<<<< HEAD
-
-=======
             <Quizzer></Quizzer>
->>>>>>> upstream/task-quizzer
             <hr></hr>
 
             <CheckAnswer expectedAnswer="42"></CheckAnswer>
