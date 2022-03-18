@@ -24,6 +24,9 @@ export function ChangeColor(): JSX.Element {
                 inline
                 type="radio"
                 name="color"
+                style={{
+                    backgroundColor: "yellow"
+                }}
                 onChange={(event: ChangeEvent) => setColor(event.target.value)}
                 id="yellow"
                 label="yellow"
@@ -34,6 +37,9 @@ export function ChangeColor(): JSX.Element {
                 inline
                 type="radio"
                 name="color"
+                style={{
+                    backgroundColor: "skyblue"
+                }}
                 onChange={(event: ChangeEvent) => setColor(event.target.value)}
                 id="skyblue"
                 label="skyblue"
@@ -44,6 +50,9 @@ export function ChangeColor(): JSX.Element {
                 inline
                 type="radio"
                 name="color"
+                style={{
+                    backgroundColor: "darkgreen"
+                }}
                 onChange={(event: ChangeEvent) => setColor(event.target.value)}
                 id="darkgreen"
                 label="darkgreen"
@@ -54,6 +63,9 @@ export function ChangeColor(): JSX.Element {
                 inline
                 type="radio"
                 name="color"
+                style={{
+                    backgroundColor: "orange"
+                }}
                 onChange={(event: ChangeEvent) => setColor(event.target.value)}
                 id="orange"
                 label="orange"
@@ -64,6 +76,9 @@ export function ChangeColor(): JSX.Element {
                 inline
                 type="radio"
                 name="color"
+                style={{
+                    backgroundColor: "purple"
+                }}
                 onChange={(event: ChangeEvent) => setColor(event.target.value)}
                 id="purple"
                 label="purple"
@@ -74,6 +89,9 @@ export function ChangeColor(): JSX.Element {
                 inline
                 type="radio"
                 name="color"
+                style={{
+                    backgroundColor: "gray"
+                }}
                 onChange={(event: ChangeEvent) => setColor(event.target.value)}
                 id="gray"
                 label="gray"
@@ -84,6 +102,9 @@ export function ChangeColor(): JSX.Element {
                 inline
                 type="radio"
                 name="color"
+                style={{
+                    backgroundColor: "magenta"
+                }}
                 onChange={(event: ChangeEvent) => setColor(event.target.value)}
                 id="magenta"
                 label="magenta"
@@ -94,6 +115,9 @@ export function ChangeColor(): JSX.Element {
                 inline
                 type="radio"
                 name="color"
+                style={{
+                    backgroundColor: "black"
+                }}
                 onChange={(event: ChangeEvent) => setColor(event.target.value)}
                 id="black"
                 label="black"
